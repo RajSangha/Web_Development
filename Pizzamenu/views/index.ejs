@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entery Forum</title>
+    <style>
+        body {
+            background-color: black;
+            color: whitesmoke;
+        }
+        #messagebox{
+            border: solid whitesmoke;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to the Punjabi Pizza</h2>
+        <div id="messagebox">
+        <% if (locals.size) { %>
+            <p> Your order follows: </p>
+            <p> Size: <%= size %> size</p>
+            <p>Pizza type : <%= Pizztype %></p>
+            <p> Following Toppings are included<%= top %></p>
+
+            <% } %>
+
+        </div>
+        <form  action="/submit" id="orderform" method="post">
+         
+            <h4>Please choose size for your pizza </h4>
+            <label for="idInput">Size</label>
+            <select name="sizeType">
+                <option value="X-Large">$19.00 X-Large </option>
+                <option value="Large">$14.00 Large</option>
+                <option value="Medium">$12.00 Medium</option>
+                <option value="Small">$8.00 Small</option>
+            </select>
+        
+
+      
+            <h4>Please choose size forom the following options </h4>
+            <label for="idInput">Type</label>
+            <select name="pizzaType">
+                <option value="Veggie"> Veggie </option>
+                <option value="Chicken">Chicken</option>
+                <option value="Deluxe">Deluxe</option>
+                <option value="Peperoni">Peperoni</option>
+                <option value="Cheese">Cheese</option>
+            </select>
+        
+
+        
+            <h4>Choose Your toppings</h4>
+            <input type="checkbox" name="topping"  value="olives"/>Olives<br/>
+            <input type="checkbox" name="topping"  value="green-pepper"/>Green-Pepper<br/>
+            <input type="checkbox" name="topping"  value="red-Pepper"/>Red-Pepper<br/>
+            <input type="checkbox" name="topping"  value="banana-Pepper"/>Banana-Pepper<br/>
+            <input type="submit"   name="submit"   value="Submit">
+
+        </form>
+
+
+    </div>
+</body>
+</html>

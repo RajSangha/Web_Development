@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs") %>
+
+<link href="styles/styles.css" rel="stylesheet">
+
+
+
+
+<div class="container">
+    <div id="heading">
+            <h3>
+                <%=locals.date %> 
+            </h3>
+    </div> 
+    <div id="container-form">=
+          
+    </div>
+    
+    <div class="form-container">
+       <form action="/submit" method="POST">
+        <input name="newtask" type="text" placeholder="New Item"/>
+        <input id="button" name="createT" type="submit" value="+"/>
+       </form>
+
+      
+    </div>
+</div>
